@@ -1,0 +1,10 @@
+.inlinediv{
+	display: inline-block;
+	vertical-align: top;
+}
+.bikeimg{
+	display: inline-block;
+	width: 150px;
+	height: auto;
+	display: inline-block;
+}

@@ -1,0 +1,207 @@
+<!-- <div id='bikes'>
+	<h3>Bikes of Today!</h3>
+	<div>
+		<img src={{bikes[i].image_url}}>
+		<div>
+			<p>{{bikes[i].title}} at {{bikes[i].location}}</p>
+			<p>Price: {{bikes[i].price}}</p>
+		</div>
+	</div>
+	<button class="arrows left" (click)="change('left')">&#10094;</button>
+	<button class="arrows right" (click)="change('right')">&#10095;</button>
+</div> -->
+<!-- <div id='lrcontainer'>
+	<a [ngClass]="{'link':true,'inactive':rl=='r', 'active':rl=='l'}" (click)="rl='l'">Login</a>
+	<a [ngClass]="{'link':true,'inactive':rl=='l','active':rl=='r'}" (click)="rl='r'">Sign Up</a>
+	
+
+		<div *ngIf="rl=='r'">
+			<form (submit)="regist()">
+				<p *ngIf="errmessage.reg">{{errmessage.reg}}</p>
+				<div class="form-group">
+					<input type="text" name="first_name" class="form-control" placeholder="First Name" required minlength="2" [(ngModel)]="reg.first_name" #fname="ngModel">
+				</div>
+				<div *ngIf="fname.invalid && (fname.dirty||fname.touched)" class="errmessages">
+					<p *ngIf="fname.errors.required">First Name is empty.</p>
+					<p *ngIf="fname.errors.minlength">First Name is too short.</p>
+				</div>
+				<div class="form-group">
+					<input type="text" name="last_name" class="form-control" placeholder="Last Name" required minlength="2" [(ngModel)]="reg.last_name" #lname="ngModel">
+				</div>
+				<div *ngIf="lname.invalid && (lname.dirty||lname.touched)" class="errmessages">
+					<p *ngIf="lname.errors.required">Last Name is empty.</p>
+					<p *ngIf="lname.errors.minlength">Last Name is too short.</p>
+				</div>
+				<div class="form-group">
+					<input type="email" name="email" class="form-control" placeholder="Email" required pattern="(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))" [(ngModel)]="reg.email" #email="ngModel">
+				</div>
+				<div *ngIf="email.invalid && (email.dirty||email.touched)" class="errmessages">
+					<p *ngIf="email.errors.required">Email is empty.</p>
+					<p *ngIf="email.errors.pattern">Email is not valid.</p>
+				</div>
+				<div class="form-group">
+					<input type="password" name="password" class="form-control" placeholder="Password" required minlength="8" [(ngModel)]="reg.password" #password="ngModel">
+				</div>
+				<div *ngIf="password.invalid && (password.dirty||password.touched)" class="errmessages">
+					<p *ngIf="password.errors.required">Password is empty.</p>
+					<p *ngIf="password.errors.minlength">Password is too short.</p>
+				</div>
+				<div class="form-group">
+					<input type="password" name="c_password" class="form-control" placeholder="Password Confirmation" required minlength="8" pattern={{reg.password}} [(ngModel)]="reg.comfirm" #cpassword="ngModel">
+				</div>
+				<div *ngIf="cpassword.invalid && (cpassword.dirty||cpassword.touched)" class="errmessages">
+					<p *ngIf="cpassword.errors.required">Password confirmation is empty.</p>
+					<p *ngIf="cpassword.errors.minlength">Password confirmation is too short.</p>
+					<p *ngIf="cpassword.errors.pattern">Password confirmation is not match.</p>
+				</div>
+				<button type="submit" id='regbtn' class="btn btn-primary" [disabled]="fname.invalid||lname.invalid||email.invalid||password.invalid||cpassword.invalid">Register</button>
+			</form>
+		</div>
+	</div>
+</div> -->
+<!-- <div id='logreg'>
+		<div *ngIf="rl=='l'">
+			<form (submit)="login()">
+				<p *ngIf="errmessage.log">{{errmessage.log}}</p>
+				<div class="form-group">
+					<input type="email" name="lemail" pattern="(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))" class="form-control" placeholder="Email" required [(ngModel)]="user.email" #lemail="ngModel">
+				</div>
+				<div *ngIf="lemail.invalid && (lemail.dirty||lemail.touched)" class="errmessages">
+					<p *ngIf="lemail.errors.required">Email is empty.</p>
+					<p *ngIf="lemail.errors.pattern">Email is not valid.</p>
+				</div>
+				<div class="form-group">
+					<input type="password" name="lpassword" class="form-control" placeholder="Password" required minlength="8" [(ngModel)]="user.password" #lpassword="ngModel">
+				</div>
+				<div *ngIf="lpassword.invalid && (lpassword.dirty||lpassword.touched)" class="errmessages">
+					<p *ngIf="lpassword.errors.required">Password is empty.</p>
+					<p *ngIf="lpassword.errors.minlength">Password is too short.</p>
+				</div>
+				<button type="submit" id='logbtn' class="btn btn-success">Login</button>
+			</form>
+		</div> -->
+<div class="container" id="logreg">
+    <div class="row">
+		<div class="col-md-6 offset-md-3">
+			<div class="panel panel-login">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-6">
+							<a href="#" class="active" id="login-form-link">Login</a>
+						</div>
+						<div class="col-6">
+							<a href="#" id="register-form-link">Register</a>
+						</div>
+					</div>
+					<hr>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-12">
+							<form id="login-form" (submit)="login()" role="form" style="display: block;">
+								<p *ngIf="errmessage.log" class="errmessages">{{errmessage.log}}</p>
+								<div class="form-group">
+									<input type="email" name="lemail" pattern="(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))" class="form-control" placeholder="Email" required [(ngModel)]="user.email" #lemail="ngModel">
+								</div>
+								<div *ngIf="lemail.invalid && (lemail.dirty||lemail.touched)" class="errmessages">
+									<p *ngIf="lemail.errors.required">Email is empty.</p>
+									<p *ngIf="lemail.errors.pattern">Email is not valid.</p>
+								</div>
+								<div class="form-group">
+									<input type="password" name="lpassword" class="form-control" placeholder="Password" required minlength="8" [(ngModel)]="user.password" #lpassword="ngModel" id="password" tabindex="2">
+								</div>
+								<div *ngIf="lpassword.invalid && (lpassword.dirty||lpassword.touched)" class="errmessages">
+									<p *ngIf="lpassword.errors.required">Password is empty.</p>
+									<p *ngIf="lpassword.errors.minlength">Password is too short.</p>
+								</div>
+								<div class="form-group text-center">
+									<input type="checkbox" tabindex="3" class="" name="remember">
+									<label for="remember" id="remember"> Remember Me</label>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6 offset-sm-3">
+											<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="text-center">
+												<a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+							<form id="register-form" (submit)="regist()" role="form" style="display: none;">
+								<p class="errmessages" *ngIf="errmessage.reg">{{errmessage.reg}}</p>
+								<div class="form-group">
+									<input type="text" name="first_name" class="form-control" placeholder="First Name" required minlength="2" [(ngModel)]="reg.first_name" #fname="ngModel">
+								</div>
+								<div *ngIf="fname.invalid && (fname.dirty||fname.touched)" class="errmessages">
+									<p *ngIf="fname.errors.required">First Name is empty.</p>
+									<p *ngIf="fname.errors.minlength">First Name is too short.</p>
+								</div>
+								<div class="form-group">
+									<input type="text" name="last_name" class="form-control" placeholder="Last Name" required minlength="2" [(ngModel)]="reg.last_name" #lname="ngModel">
+								</div>
+								<div *ngIf="lname.invalid && (lname.dirty||lname.touched)" class="errmessages">
+									<p *ngIf="lname.errors.required">Last Name is empty.</p>
+									<p *ngIf="lname.errors.minlength">Last Name is too short.</p>
+								</div>
+								<div class="form-group">
+									<input type="email" name="email" class="form-control" placeholder="Email" required pattern="(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))" [(ngModel)]="reg.email" #email="ngModel">
+								</div>
+								<div *ngIf="email.invalid && (email.dirty||email.touched)" class="errmessages">
+									<p *ngIf="email.errors.required">Email is empty.</p>
+									<p *ngIf="email.errors.pattern">Email is not valid.</p>
+								</div>
+								<div class="form-group">
+									<input type="password" name="password" class="form-control" placeholder="Password" required minlength="8" [(ngModel)]="reg.password" #password="ngModel">
+								</div>
+								<div *ngIf="password.invalid && (password.dirty||password.touched)" class="errmessages">
+									<p *ngIf="password.errors.required">Password is empty.</p>
+									<p *ngIf="password.errors.minlength">Password is too short.</p>
+								</div>
+								<div class="form-group">
+									<input type="password" name="c_password" class="form-control" placeholder="Password Confirmation" required minlength="8" pattern={{reg.password}} [(ngModel)]="reg.comfirm" #cpassword="ngModel">
+								</div>
+								<div *ngIf="cpassword.invalid && (cpassword.dirty||cpassword.touched)" class="errmessages">
+									<p *ngIf="cpassword.errors.required">Password confirmation is empty.</p>
+									<p *ngIf="cpassword.errors.minlength">Password confirmation is too short.</p>
+									<p *ngIf="cpassword.errors.pattern">Password confirmation is not match.</p>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6 offset-sm-3">
+											<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" [disabled]="fname.invalid||lname.invalid||email.invalid||password.invalid||cpassword.invalid" value="Register Now">
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row" id="bikes">
+		<div *ngFor="let bike of bikes" class="col-md-3 bike">
+			<img src={{bike.image_url}} alt="Bicycle Image">
+			<div class="description">
+				<div class="bikeDescription">
+					<div class="text">
+						<p>{{bike.title}}</p>
+						<p>{{bike.location}}</p>
+						<p>$ {{bike.price}}.00</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h2>Bikes of Today</h2>
+</div>

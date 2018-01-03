@@ -1,0 +1,22 @@
+<a [routerLink]="['/browse']">Browse</a> | 
+<a [routerLink]="['/listings']">My Listings</a> | 
+<a [routerLink]="['']">Log off</a><br>
+<form (submit)="search()">
+	<input type="text" name="searchbar" [(ngModel)]="searchString">
+	<button type="submit">Search</button>
+</form>
+<div>
+	<div *ngFor="let bicycle of bikes">
+		<img class="bikeimg" src={{bicycle.image_url}} alt={{bicycle.title}}>
+		<div class="inlinediv">
+			<h2>{{bicycle.title}}</h2>
+			<p>{{bicycle.description}}</p>
+		</div>
+		<div class="inlinediv">
+			<p>{{bicycle.price}}</p>
+			<p>{{bicycle.location}}</p>
+			<button *ngIf="bicycle._user!=user_id" (click)="contact(bicycle._user)">Contact</button>
+			<button *ngIf="bicycle._user==user_id" (click)="delete(bicycle._id)">Delete</button>
+		</div>
+	</div>
+</div>

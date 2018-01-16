@@ -1,56 +1,61 @@
-<a [routerLink]="['/browse']">Browse</a> | 
-<a [routerLink]="['/listings']">My Listings</a> | 
-<a [routerLink]="['']">Log off</a><br>
-
-<div id="createform">
-	<form (submit)="create()">
-		<div class="inlinediv form-group">
-			<p>Image Upload</p>
-			<input type="text" name="image" class="form-control" required [(ngModel)]="bike.image_url" #bimage="ngModel"><br>
-			<img class="bikeimg" src={{bike.image_url}} alt="Bicycle Picture">
-		</div>
-		<div class="inlinediv form-group">
-			<p>Title:</p>
-			<input type="text" name="title" class="form-control" required [(ngModel)]="bike.title" #btitle="ngModel"><br>
-			<p>Description:</p>
-			<textarea name="description" class="form-control" required maxlength="200" [(ngModel)]="bike.description" #bdcrip="ngModel"></textarea><br>
-		</div>
-		<div class="inlinediv form-group">
-			<p>Price:</p>
-			<div class="input-group">
-				<span class="input-group-addon">$</span><input type="text" class="form-control" name="price" required [(ngModel)]="bike.price" #bprice="ngModel" aria-label="Amount (to the nearest dollar)">
-				<span class="input-group-addon">.00</span>
+<div id="wrap">
+	<div id="links">
+		<a [routerLink]="['/browse']">Browse</a> | 
+		<a [routerLink]="['/listings']">My Listings</a> | 
+		<a [routerLink]="['']">Log off</a><br>
+	</div>
+	<div id="createform">
+		<form (submit)="create()">
+			<div class="inlinediv form-group">
+				<p>Image Upload</p>
+				<input type="text" name="image" class="form-control" required [(ngModel)]="bike.image_url" #bimage="ngModel"><br>
+				<img class="bikeimg" src={{bike.image_url}} alt="Bicycle Picture">
 			</div>
-			<p>Location:</p>
-			<input type="text" name="location" class="form-control" required [(ngModel)]="bike.location" #bloc="ngModel"><br>
-			<button type="submit" class="btn btn-success">Create</button>
-		</div>
-	</form>
-</div>
-<div id="listing">
-	<h2>Edit/Delete Listings</h2>
-	<form *ngFor="let bicycle of bikes" (submit)="update(bicycle._id)">
-		<div class="inlinediv form-group">
-			<p>Image Upload</p>
-			<input type="text" name="image" class="form-control" required [(ngModel)]="bicycle.image_url"><br>
-			<img class="bikeimg" src={{bicycle.image_url}} alt={{bicycle.title}}>
-		</div>
-		<div class="inlinediv form-group">
-			<p>Title:</p>
-			<input type="text" name="title" class="form-control" required [(ngModel)]="bicycle.title"><br>
-			<p>Description:</p>
-			<textarea name="description" class="form-control" required maxlength="200" [(ngModel)]="bicycle.description"></textarea><br>
-		</div>
-		<div class="inlinediv form-group">
-			<p>Price:</p>
-			<div class="input-group">
-				<span class="input-group-addon">$</span><input type="text" class="form-control" name="price" required [(ngModel)]="bicycle.price" #bprice="ngModel" aria-label="Amount (to the nearest dollar)">
-				<span class="input-group-addon">.00</span>
+			<div class="inlinediv form-group">
+				<p>Title:</p>
+				<input type="text" name="title" class="form-control" required [(ngModel)]="bike.title" #btitle="ngModel"><br>
+				<p>Description:</p>
+				<textarea name="description" class="form-control" required maxlength="200" [(ngModel)]="bike.description" #bdcrip="ngModel"></textarea><br>
 			</div>
-			<p>Location:</p>
-			<input type="text" name="location" class="form-control" required [(ngModel)]="bicycle.location"><br>
-			<button type="submit" class="btn btn-primary">Update</button>
-			<button class="btn btn-danger" (click)="delete(bicycle._id)">DELETE</button>
-		</div>
-	</form>
+			<div class="inlinediv form-group">
+				<p>Price:</p>
+				<div class="input-group">
+					<span class="input-group-addon">$</span><input type="text" class="form-control" name="price" required [(ngModel)]="bike.price" #bprice="ngModel" aria-label="Amount (to the nearest dollar)">
+					<span class="input-group-addon">.00</span>
+				</div>
+				<p>Location:</p>
+				<input type="text" name="location" class="form-control" required [(ngModel)]="bike.location" #bloc="ngModel"><br>
+				<button type="submit" class="btn btn-success">Create</button>
+			</div>
+		</form>
+	</div>
+	<div id="hwrap">
+		<h2>Edit/Delete Listings</h2>
+	</div>
+	<div id="listing">
+		<form *ngFor="let bicycle of bikes" class="bikes" (submit)="update(bicycle._id)">
+			<div class="inlinediv form-group">
+				<p>Image Upload</p>
+				<input type="text" name="image" class="form-control" required [(ngModel)]="bicycle.image_url"><br>
+				<img class="bikeimg" src={{bicycle.image_url}} alt={{bicycle.title}}>
+			</div>
+			<div class="inlinediv form-group">
+				<p>Title:</p>
+				<input type="text" name="title" class="form-control" required [(ngModel)]="bicycle.title"><br>
+				<p>Description:</p>
+				<textarea name="description" class="form-control" required maxlength="200" [(ngModel)]="bicycle.description"></textarea><br>
+			</div>
+			<div class="inlinediv form-group">
+				<p>Price:</p>
+				<div class="input-group">
+					<span class="input-group-addon">$</span><input type="text" class="form-control" name="price" required [(ngModel)]="bicycle.price" #bprice="ngModel" aria-label="Amount (to the nearest dollar)">
+					<span class="input-group-addon">.00</span>
+				</div>
+				<p>Location:</p>
+				<input type="text" name="location" class="form-control" required [(ngModel)]="bicycle.location"><br>
+				<button type="submit" class="btn btn-primary">Update</button>
+				<button class="btn btn-danger" (click)="delete(bicycle._id)">DELETE</button>
+			</div>
+		</form>
+	</div>
 </div>

@@ -1,3 +1,11 @@
+#wrap{
+	width: 70%;
+	margin: auto;
+	padding: 10px;
+}
+#links{
+	text-align: right;
+}
 .bikeimg{
 	width: 150px;
 	height: auto;
@@ -9,11 +17,12 @@
 	margin-left: 20px;
 }
 #createform {
+
 	padding: 10px;
 	border-radius: 15px 15px 0 0;
 	background-color: white;
 	border-bottom: 1px solid grey;
-	/*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #createform form button {
 	position: relative;
@@ -24,8 +33,19 @@
 	border-radius: 0 0 15px 15px;
 	background-color: white;
 	border-bottom: 1px solid grey;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#hwrap{
+	padding: 10px;
+	background-color: darkblue;
+	color: white;
+	border-bottom: 1px solid grey;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #listing form button {
 	position: relative;
 	left: 125px;
+}
+.bikes{
+	border-bottom: 1px solid lightgrey;
 }

@@ -1,22 +1,32 @@
-<a [routerLink]="['/browse']">Browse</a> | 
-<a [routerLink]="['/listings']">My Listings</a> | 
-<a [routerLink]="['']">Log off</a><br>
-<form (submit)="search()">
-	<input type="text" name="searchbar" [(ngModel)]="searchString">
-	<button type="submit">Search</button>
-</form>
-<div>
-	<div *ngFor="let bicycle of bikes">
-		<img class="bikeimg" src={{bicycle.image_url}} alt={{bicycle.title}}>
-		<div class="inlinediv">
-			<h2>{{bicycle.title}}</h2>
-			<p>{{bicycle.description}}</p>
-		</div>
-		<div class="inlinediv">
-			<p>{{bicycle.price}}</p>
-			<p>{{bicycle.location}}</p>
-			<button *ngIf="bicycle._user!=user_id" (click)="contact(bicycle._user)">Contact</button>
-			<button *ngIf="bicycle._user==user_id" (click)="delete(bicycle._id)">Delete</button>
+<div id="wrap">
+	<div id="links">
+		<a [routerLink]="['/browse']">Browse</a> | 
+		<a [routerLink]="['/listings']">My Listings</a> | 
+		<a [routerLink]="['']">Log off</a><br>
+	</div>
+	<form id="searchbar" (submit)="search()">
+		<input type="text" id="searchtext" name="searchbar" class="form-control" [(ngModel)]="searchString">
+		<button type="submit" class="btn btn-primary">Search</button>
+	</form>
+	<div id="list">
+		<div *ngFor="let bicycle of bikes" class="result">
+			<div class="imgwrap">
+				<img class="bikeimg" src={{bicycle.image_url}} alt={{bicycle.title}}>
+				<div class="discription">
+					<div class="discriptiontext">
+						<p>{{bicycle.description}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="inlinediv">
+				<h2>{{bicycle.title}}</h2>
+				<p>Price: ${{bicycle.price}}</p>
+				<p>Location: {{bicycle.location}}</p>
+				<div class="buttons">
+					<button class="btn btn-success" *ngIf="bicycle._user!=user_id" (click)="contact(bicycle._user)">Contact</button>
+					<button class="btn btn-danger" *ngIf="bicycle._user==user_id" (click)="delete(bicycle._id)">Delete</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

@@ -16,10 +16,18 @@ export class BrowseComponent implements OnInit {
   constructor(public _bikeService:BicycleService) { }
 
   ngOnInit() {
-  	this._bikeService.getbikes('',(res)=>{
-      this.user_id = this._bikeService.userid;
-      this.bikes = res;
-  	})
+    this._bikeService.getUserid((res)=>{
+      if(!res){
+        this._router.navigate(['/']);
+      }
+      else{
+        this.user_id = res;
+        this._bikeService.getbikes('',(res)=>{
+          this.bikes = res;
+        })
+      }
+    })
+  	
   }
 
   search(){

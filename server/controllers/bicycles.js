@@ -25,7 +25,11 @@ module.exports = {
 		})
 	},
 	search: function(req,res){
-		Bicycle.find({title: new RegExp(req.params.title,'i')},function(err,bikes){
+		var regexp = new RegExp(req.params.title,'i');
+		Bicycle.find({$or: [{title: regexp},
+						   {description: regexp}
+			]},
+			function(err,bikes){
 			if(err){
 				console.log(err);
 			}

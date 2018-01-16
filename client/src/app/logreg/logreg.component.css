@@ -9,30 +9,6 @@ input.ng-touched.ng-invalid{
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
-/*#lrcontainer {
-	background: black;
-	opacity: 0.5;
-	border: 1px solid green;
-	padding: 10px;
-	border-radius: 5px;
-	width: 60%;
-	margin: auto;
-	vertical-align: top;
-	text-align: center;
-}
-#lrcontainer button {
-	opacity: 1;
-}
-.link {
-	font-size: 1.2em;
-	margin: 0 10px;
-}
-.active {
-	color: lightblue;
-}
-.login {
-    padding-top: 90px;
-}*/
 .panel-login {
 	margin: 50px 0;
     border-color: #ccc;
@@ -140,7 +116,6 @@ input.ng-touched.ng-invalid{
 }
 #bikes {
 	width: 100%;
-	/*border: 1px solid blue;*/
 	margin: 20px auto;
 	height: 250px;
 	text-align: center;
@@ -150,7 +125,6 @@ input.ng-touched.ng-invalid{
 	color: white;
 	position: relative;
 	vertical-align: middle;
-	/*background-color: black;*/
 
 }
 .container h2 {
@@ -164,7 +138,6 @@ input.ng-touched.ng-invalid{
 }
 #bikes div.description:hover .bikeDescription{
 	opacity: 0.7;
-	display: 
 }
 .description {
 	position: absolute;
@@ -195,30 +168,7 @@ input.ng-touched.ng-invalid{
     height: 30%;
     width: 50%;
     margin: -15% 0 0 -25%;
-}/*
-.arrows {
-	opacity: 0.6;
-	width: 80px;
-	height: 100px;
-	color: white;
-	font-size: 2em;
-	text-align: center;
-	border:none;
-	font-weight: bold;
 }
-.arrows:hover {
-	background-color: rgb(0,0,0);
-}
-.right {
-	float: right;
-	position: relative;
-	top: -320px;
-}
-.left {
-	float: left;
-	position: relative;
-	top: -320px;
-}*/
 .errmessages {
 	text-align: center;
 	color: red;

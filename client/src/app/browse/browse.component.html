@@ -9,22 +9,64 @@
 		<button type="submit" class="btn btn-primary">Search</button>
 	</form>
 	<div id="list">
-		<div *ngFor="let bicycle of bikes" class="result">
-			<div class="imgwrap">
-				<img class="bikeimg" src={{bicycle.image_url}} alt={{bicycle.title}}>
-				<div class="discription">
-					<div class="discriptiontext">
-						<p>{{bicycle.description}}</p>
-					</div>
-				</div>
+		<div id="leftbar">
+			<div class="slideshow-container">
+
+			<div [ngClass]="{'mySlides':true,'hide':slideIndex!=1,'fade':slideIndex!=1}">
+			  <div class="numbertext">1 / 4</div>
+			  <img src={{fourbikes[0].image_url}}  alt={{fourbikes[0].title}} style="width:80%">
+			  <div class="text">Caption One</div>
 			</div>
-			<div class="inlinediv">
-				<h2>{{bicycle.title}}</h2>
-				<p>Price: ${{bicycle.price}}</p>
-				<p>Location: {{bicycle.location}}</p>
-				<div class="buttons">
-					<button class="btn btn-success" *ngIf="bicycle._user!=user_id" (click)="contact(bicycle._user)">Contact</button>
-					<button class="btn btn-danger" *ngIf="bicycle._user==user_id" (click)="delete(bicycle._id)">Delete</button>
+
+			<div [ngClass]="{'mySlides':true,'hide':slideIndex!=2, 'fade':slideIndex!=2}">
+			  <div class="numbertext">2 / 4</div>
+			  <img src={{fourbikes[1].image_url}}  alt={{fourbikes[1].title}} style="width:80%">
+			  <div class="text">Caption Two</div>
+			</div>
+
+			<div [ngClass]="{'mySlides':true,'hide':slideIndex!=3, 'fade':slideIndex!=3}">
+			  <div class="numbertext">3 / 4</div>
+			  <img src={{fourbikes[2].image_url}}  alt={{fourbikes[2].title}} style="width:80%">
+			  <div class="text">Caption Three</div>
+			</div>
+
+			<div [ngClass]="{'mySlides':true,'hide':slideIndex!=4, 'fade':slideIndex!=4}">
+			  <div class="numbertext">4 / 4</div>
+			  <img src={{fourbikes[3].image_url}}  alt={{fourbikes[3].title}} style="width:80%">
+			  <div class="text">Caption Four</div>
+			</div>
+
+
+			<a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+			<a class="next" (click)="plusSlides(1)">&#10095;</a>
+
+			</div>
+
+			<div style="text-align:center">
+			  <span [ngClass]="{'dot':true, 'active':slideIndex == 1}" (click)="currentSlide(1)"></span> 
+			  <span [ngClass]="{'dot':true, 'active':slideIndex == 2}" (click)="currentSlide(2)"></span> 
+			  <span [ngClass]="{'dot':true, 'active':slideIndex == 3}" (click)="currentSlide(3)"></span> 
+			  <span [ngClass]="{'dot':true, 'active':slideIndex == 4}" (click)="currentSlide(4)"></span> 
+			</div>
+		</div>
+		<div id="maincontent">
+			<div *ngFor="let bicycle of bikes" class="result">
+				<div class="imgwrap">
+					<div class="discription">
+						<div class="discriptiontext">
+							<p>{{bicycle.description}}</p>
+						</div>
+					</div>
+					<img class="bikeimg" src={{bicycle.image_url}} alt={{bicycle.title}}>
+				</div>
+				<div class="inlinediv">
+					<h2>{{bicycle.title}}</h2>
+					<p>Price: ${{bicycle.price}}</p>
+					<p>Location: {{bicycle.location}}</p>
+					<div class="buttons">
+						<button class="btn btn-success" *ngIf="bicycle._user!=user_id" (click)="contact(bicycle._user)">Contact</button>
+						<button class="btn btn-danger" *ngIf="bicycle._user==user_id" (click)="delete(bicycle._id)">Delete</button>
+					</div>
 				</div>
 			</div>
 		</div>
